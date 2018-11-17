@@ -64,7 +64,7 @@ def split_men_women(data, labels, amount_men, amount_women, id_men, id_women):
     return data_learn, labels_learn, data_train, labels_train
 
 
-def Amount_men_women(label):
+def amount_men_women(label):
     length = label.__len__()
     men = 0
     women = 0
@@ -89,7 +89,7 @@ labels = genderread['CLASS'] #defining labels
 #dropping the unnecessary columns and splitting the dataset to have equal amount of both classes' samples:
 read_input(data, vector)
 
-men_am,women_am, ind_men, ind_women = Amount_men_women(labels)
+men_am,women_am, ind_men, ind_women = amount_men_women(labels)
 
 
 data_learning, labels_learning, data_test, labels_test = split_men_women(data, labels, men_am, women_am, ind_men, ind_women)
